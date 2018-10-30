@@ -4,6 +4,7 @@
   "private": true,
   "homapage": "https://duplijan.github.io/Todo-App/",
   "dependencies": {
+    "build": "^0.1.4",
     "gh-pages": "^2.0.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
