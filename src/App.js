@@ -40,13 +40,15 @@ class App extends Component {
     if(!this.state.newTodo){
       return;
     }
+
     this.setState({
       newTodo: '',
       todos: [...this.state.todos, {
         title: this.state.newTodo,
         done: false
-      }],
+      }]
     })
+
   }
 
   toggleTodoDone(e, index){
@@ -107,8 +109,8 @@ class App extends Component {
         <h1 className='todo_heading'>TODO'S</h1>
         <NewTodo handleChange={this.handleChange} handleSubmit={this.handleSubmit} newTodo={this.state.newTodo} />
         <TodoList todos={this.state.todos}
-                  toggleTodoDone={this.toggleTodoDone}
-                  removeTodo={this.removeTodo}
+                    toggleTodoDone={this.toggleTodoDone}
+                    removeTodo={this.removeTodo}
         />
         <ButtonsGroup selectAllTodos={this.selectAllTodos}
                       unselectAllTodos={this.unselectAllTodos}
