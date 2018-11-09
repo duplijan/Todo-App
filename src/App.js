@@ -27,7 +27,32 @@ class App extends Component {
     this.selectAllTodos = this.selectAllTodos.bind(this);
     this.unselectAllTodos = this.unselectAllTodos.bind(this);
     this.deleteAllTodos = this.deleteAllTodos.bind(this);
+    this.getTodosFromLocalStoradge = this.getTodosFromLocalStoradge.bind(this);
+    this.updateLocalStoradge = this.updateLocalStoradge.bind(this);
   }
+  componentWillMount(){
+    this.getTodosFromLocalStoradge();
+  }
+
+  componentDidUpdate(){
+    this.updateLocalStoradge();
+  }
+
+  getTodosFromLocalStoradge(){
+    const todos = localStorage.getItem('todos');
+    if(todos){
+        this.setState({
+        todos: JSON.parse(localStorage.getItem('todos'))
+      });
+    }
+  }
+
+  updateLocalStoradge(){
+    const todos = JSON.stringify(this.state.todos);
+    localStorage.setItem('todos', todos);
+    localStorage.setItem('newTodo', '');
+  }
+
 
   handleChange(e){
     this.setState({
@@ -48,7 +73,6 @@ class App extends Component {
         done: false
       }]
     })
-
   }
 
   toggleTodoDone(e, index){
@@ -68,6 +92,7 @@ class App extends Component {
     this.setState({
       todos
     })
+
   }
 
   deleteAllTodos(){
