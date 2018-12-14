@@ -1,2 +1,3 @@
-Created with React and localStorage
+branch: master - React and localStorage
+branch: with-redux - React and Redux
 
