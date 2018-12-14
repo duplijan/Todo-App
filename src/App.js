@@ -53,7 +53,6 @@ class App extends Component {
     localStorage.setItem('newTodo', '');
   }
 
-
   handleChange(e){
     this.setState({
       newTodo: e.target.value
@@ -92,7 +91,6 @@ class App extends Component {
     this.setState({
       todos
     })
-
   }
 
   deleteAllTodos(){
