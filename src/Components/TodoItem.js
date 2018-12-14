@@ -1,13 +1,15 @@
 import React from 'react';
 
-const TodoItem = (props) => {
-  const {todo, index} = props;
+const TodoItem = ({todo, index, toggleTodoDone, removeTodo}) => {
   return (
     <div className='todoItem' key={todo}>
-      <input type='checkbox' onChange={(e) => props.toggleTodoDone(e, index)} checked={todo.done} /> {/*passed index of every single todo to find out which one was chacked*/}
-      {/* add done class when the box is checked, todo.done is changed in the state */}
+      <input
+          type='checkbox'
+          onChange={(e) => toggleTodoDone(e, index)}
+          checked={todo.done}
+      />
       <span className={todo.done ? 'done' : ''}> {todo.title} </span>
-      <button className='delete_button'onClick={() => props.removeTodo(index) }>Remove</button>
+      <button className='delete_button' onClick={() => removeTodo(index)}>Remove</button>
     </div>
   )
 }

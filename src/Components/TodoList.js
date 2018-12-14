@@ -1,23 +1,22 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
-const TodoList = (props) => {
-  const todos = props.todos;
+const TodoList = ({todos, toggleTodoDone, removeTodo}) => {
   const todo = todos.length ? (
     todos.map((todo, index) => {
       return (
         <TodoItem key={index}
                  todo={todo}
                  index={index}
-                 toggleTodoDone={props.toggleTodoDone}
-                 removeTodo={props.removeTodo}
+                 toggleTodoDone={toggleTodoDone}
+                 removeTodo={removeTodo}
         />
       )
     })
   ) :
   (
     <div className='message'>
-      <h3> Not Posts Yet!</h3>
+      <h3> You have learnt REDUX!!!</h3>
     </div>
   )
   return (
