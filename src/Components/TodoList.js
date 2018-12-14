@@ -17,7 +17,7 @@ const TodoList = (props) => {
   ) :
   (
     <div className='message'>
-      <h3> Not Posts Yet!</h3>
+      <h3> NO TODOS!</h3>
     </div>
   )
   return (
