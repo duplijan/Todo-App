@@ -35,7 +35,7 @@ class App extends Component {
     const { newTodo, todos, onNewTodoChanged, onToggleAllDone, onDeleteAllTodos } = this.props;
     return (
       <div className="TodoApp">
-        <h1 className='todo_heading'>TODO'S</h1>
+        <h1 className='todo_heading'>TODOS</h1>
         <NewTodo
               handleChange={onNewTodoChanged}
               handleSubmit={this.handleSubmit}
