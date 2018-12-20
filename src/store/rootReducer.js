@@ -56,5 +56,4 @@ export function reducer(state = initState, action) {
     default:
     return state
   }
-
 }
