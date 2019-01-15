@@ -17,7 +17,7 @@ const TodoList = (props) => {
   ) :
   (
     <div className='message'>
-      <h3> You jsut learnt React!</h3>
+      <h3> You just learnt React!</h3>
     </div>
   )
   return (
